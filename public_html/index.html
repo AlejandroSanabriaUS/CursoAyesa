@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>HTML5 Accidentado</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	<form method="Post"> <!-- Falta el action del formulario, el método Post para que no envíe por url -->
+        <h1>DECLARACIÓN AMISTOSA DE ACCIDENTE</h1>
+        <div>
+            <table border="1" width="1500" >
+                <tr>
+                    <td>            
+                        <u>1.- Fecha del Accidente</u><br>
+                        <input type="date" name="fechaAccidente" />
+                    </td>
+                    <td>            
+                        <u>Hora<u><br>
+                        <input type="time" name="horaAccidente" />  
+                    </td>
+                    <td>
+                        <u>2.- Localización</u><br>
+                        <a>País</a>						
+						<select name="paisAccidente">
+							<option value="1">España</option>
+							<option value="2">Portugal</option>
+							<option value="3">Francia</option>
+							<option value="4">Alemania</option>
+						</select>
+                    </td>
+                    <td>
+                        <u>Lugar</u><br>
+                        <input type="text" name="lugarAccidente" required />
+                    </td>
+                    <td>
+                        <u>3.- Víctima(s) incluso leve(s)</u><br>
+                        <form>
+                            <input type="radio" name="victimasAccidente" value="no" checked/> No
+                            <input type="radio" name="7victimasAccidente" value="si"/> Si 
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <table border="1" width="1500">
+                <tr>
+                    <td >
+                        <u>4.- Datos Materiales</u>
+                    </td>
+                    <td></td>
+                    <td>
+                        <u>5.- Testigos: nombre, dirección, tel...</u>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a>Vehículos distintos de A y B</a>
+                        <form>
+                            <input type="radio" name="dañoDistintosDeAB" value="no" checked/> No
+                            <input type="radio" name="dañoDistintosDeAB" value="si"/> Si 
+                        </form>
+                    </td>
+                    <td>
+                        <a>Objetos distintos al vehículo</a>
+                        <form>
+                            <input type="radio" name="objetosDistintosAlVehículo" value="no" checked/> No
+                            <input type="radio" name="objetosDistintosAlVehículo" value="si"/> Si 
+                        </form>
+                    </td>
+                    <td>
+                        ​<textarea id="testigos" name="testigos" rows="4" cols="40"></textarea>
+                    </td> 
+                </tr>
+            </table>
+            
+			<table style="float:left" border="1" width="500">
+				<tr>
+					<td colspan="2">
+						<h1>Vehículo A</h1>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b><u>Asegurado</b>(véase poliza de seguro)</u>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a>Nombre</a><input type="text" name="nombreAseguradoA" required /><br>
+                        <a>Apellidos</a><input type="text" name="apellidosAseguradoA" required /><br>
+                        <a>Dirección</a><input type="text" name="direccionAseguradoA" required /><br>
+                        <a>Codigo Postal</a><input type="text" pattern="[0-9]{5}" name="codigoPostalAseguradoA" required />
+                        <a>País</a><input type="text" name="paisAseguradoA" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonoEmailAseguradoA" required /><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b><u>Vehículo</u></b>
+					</td>
+				</tr>
+				<tr>
+					<td>					
+						<b>Vehículo a motor</b>
+					</td>
+					<td>
+						<b>Remolque</b>
+					</td>
+				</tr>
+                <tr>
+                    <td>
+                        <p>Marca o modelo</p><input type="text" name="marcaA" required /><br>
+                        <p>Matrícula o bastido</p><input type="text" name="matriculaA" required /><br>
+                        <p>País de matrícula</p><input type="text" name="paisMatriculaA" required />
+                    </td>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>Matricula o bastidor</p><input type="text" name="matriculaRemolqueA" required /><br>
+                        <p>País de matrícula</p><input type="text" name="paisMatriculaRemolqueA" required /><br>                      
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <b><u>Aseguradora</b>(véase poliza de seguro)</u>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a>Nombre</a><input type="text" name="nombreAseguradoraA" required /><br>
+                        <a>Nº de póliza</a><input type="text" name="numeroPolizaA" required /><br>
+                        <a>Nº de Carta Verde</a><input type="text" name="numeroCartaVerdeA" required /><br>
+                        <a>Certificado o Carta Verde desde</a><input type="date" name="certificadoDesdeA" />hasta<input type="date" name="certificadohastaA" /><br>
+                        <a>Agencia(oficina o corredor)</a><input type="text" name="oficinaA" required /><br>
+                        <a>Nombre</a><input type="text" name="nombreAseguradoraAgenciaA" required /><br>
+                        <a>Direccion</a><input type="text" name="direccionAseguradoraAgenciaA" required /><br>
+                        <a>País</a><input type="text" name="paisAseguradoraAgenciaA" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonooEmailAseguradoraA" required /><br>
+                        <em>¿Los daños propios del vehículo están asegurados?</em>
+                        <form>
+                            <input type="radio" name="dañosVehículoAseguradosA" value="no" checked/> No
+                            <input type="radio" name="dañosVehículoAseguradosA" value="si"/> Si 
+                        </form>
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <b><u>Conductor</b>(ver permiso de conducir)</u>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a>NOMBRE</a><input type="text" name="nombreConductorA" required /><br>
+                        <a>Apellidos</a><input type="text" name="apellidosConductorA" required /><br>
+                        <a>Fecha de nacimiento</a> <input type="date" name="fechaNacimientoConductorA" /><br>
+                        <a>Direccion</a><input type="text" name="direccionConductorA" required /><br>
+                        <a>País</a><input type="text" name="paisConductorA" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonooemailConductorA" required /><br>
+                        <a>Permiso de conducir nº</a><input type="text" name="permisoConducirConductorA" required /><br>
+                        <a>Categoría(A,B,...)</a><input type="text" name="categoríaConductorA" required /><br>
+                        <a>Permiso válido hasta</a> <input type="date" name="permisoValidoConductorA" /><br>
+                    </td>
+                </tr>
+				<tr><td colspan="2"><b>Indicar el punto de choque inicial con una flecha --></td></tr>
+				<tr>
+					<td colspan="2">
+						<b>Daños apreciados al vehículo A</b><br>
+						​<textarea id="testigos" name="dañosApreciadosA" rows="3" cols="40"></textarea><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Observaciones</b><br>
+						<textarea id="testigos" name="observacionesA" rows="3" cols="40"></textarea><br>
+					</td>
+				</tr>
+				
+			</table>
+			<table style="float:left" border="1" width="500">
+				<tr>
+					<td colspan="2">
+						<h1>CIRCUSTANCIAS</h1>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table style="float:left">
+								<tr>
+									<td colspan="3">
+										<b>Poner un aspa(x) en cada casilla que proceda para precisar el croquis</b><br>
+										<em><b>* tachar las ciscustancias no válidas</b></em>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b >A</b>
+									</td>
+									<td>
+									</td>
+									<td>
+										 <b >B</b>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input  type="checkbox" name="estacionadoA" value="estacionadoA">
+									</td>
+									<td>
+										*Estaba estacionado/parado
+									</td>
+									<td>
+										 <input  type="checkbox" name="estacionadoB" value="estacionadoB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input  type="checkbox" name="abriendoPuertaA" value="abriendoPuertaA">	
+									</td>
+									<td>
+										*Salía de un estacionamiento/abriendo puerta
+									</td>
+									<td>
+										<input  type="checkbox" name="abriendoPuertaB" value="abriendoPuertaB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input  type="checkbox" name="estacionarA" value="estacionarA">	
+									</td>
+									<td>
+										Iba a estacionar
+									</td>
+									<td>
+										<input  type="checkbox" name="estacionarB" value="estacionarB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="saliaAparcamientoA" value="saliaAparcamientoA">	
+									</td>
+									<td>
+										Salía de un aparcamiento, de un lugar privado, a un camino de tierra
+									</td>
+									<td>
+										<input  type="checkbox" name="saliaAparcamientoB" value="saliaAparcamientoB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="entrabaAparcamientoA" value="entrabaAparcamientoA">	
+									</td>
+									<td>
+										Entraba a un aparcamiento, a un lugar privado, a un camino de tierra
+									</td>
+									<td>
+										<input  type="checkbox" name="entrabaAparcamientoB" value="entrabaAparcamientoB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="entrabaPlazaSentidoGiratorioA" value="entrabaPlazaSentidoGiratorioA">	
+									</td>
+									<td>
+										Entraba a una plaza de sentido giratorio
+									</td>
+									<td>
+										<input  type="checkbox" name="entrabaPlazaSentidoGiratorioB" value="entrabaPlazaSentidoGiratorioB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="circulabaPlazaSentidoGiratorioA" value="circulabaPlazaSentidoGiratorioA">	
+									</td>
+									<td>
+										Circulaba por una plaza de sentido giratorio
+									</td>
+									<td>
+										<input  type="checkbox" name="circulabaPlazaSentidoGiratorioB" value="circulabaPlazaSentidoGiratorioB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="porDetrásA" value="porDetrásA">	
+									</td>
+									<td>
+										Colisionó en la parte de atrás al otro vehículo que circulaba en el mismo sentido y en el mismo carril
+									</td>
+									<td>
+										<input  type="checkbox" name="porDetrásB" value="porDetrásB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="circulabaMismoSentidoA" value="circulabaMismoSentidoA">	
+									</td>
+									<td>
+										Circulaba en el mismo sentido y en carril diferente
+									</td>
+									<td>
+										<input  type="checkbox" name="circulabaMismoSentidoB" value="circulabaMismoSentidoB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="cambiabaCarrilA" value="cambiabaCarrilA">	
+									</td>
+									<td>
+										Cambiaba de carril
+									</td>
+									<td>
+										<input  type="checkbox" name="cambiabaCarrilB" value="cambiabaCarrilB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="adelantabaA" value="adelantabaA">	
+									</td>
+									<td>
+										Adelantaba
+									</td>
+									<td>
+										<input  type="checkbox" name="adelantabaB" value="adelantabaB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="girabaDerechaA" value="girabaDerechaA">	
+									</td>
+									<td>
+										Giraba a la derecha
+									</td>
+									<td>
+										<input  type="checkbox" name="girabaDerechaB" value="girabaDerechaB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="girabaIzquierdaA" value="girabaIzquierdaA">	
+									</td>
+									<td>
+										Giraba a la izquierda
+									</td>
+									<td>
+										<input  type="checkbox" name="girabaIzquierdaB" value="girabaIzquierdaB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="dabaMarchaAtrasA" value="dabaMarchaAtrasA">	
+									</td>
+									<td>
+										Daba marcha atrás
+									</td>
+									<td>
+										<input  type="checkbox" name="dabaMarchaAtrasB" value="dabaMarchaAtrasB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="invadeSentidoInversoA" value="invadeSentidoInversoA">	
+									</td>
+									<td>
+										Invadía la parte reservada a la circulación en sentido inverso
+									</td>
+									<td>
+										<input  type="checkbox" name="invadeSentidoInversoB" value="invadeSentidoInversoB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="veniaDerechaCruzA" value="veniaDerechaCruzA">	
+									</td>
+									<td>
+										Venía de la derecha(en un cruce)
+									</td>
+									<td>
+										<input  type="checkbox" name="veniaDerechaCruzB" value="veniaDerechaCruzB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="checkbox" name="noRespetaSeñalPreferenciaA" value="noRespetaSeñalPreferenciaA">	
+									</td>
+									<td>
+										No respetó la señar de preferencia o semáforo en rojo
+									</td>
+									<td>
+										<input  type="checkbox" name="noRespetaSeñalPreferenciaB" value="noRespetaSeñalPreferenciaB">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="number" name="casillasMarcadasA" min="0" max="17">	
+									</td>
+									<td>
+										Indicar número de casillas marcadas
+									</td>
+									<td>
+										<input type="number" name="casillasMarcadasB" min="0" max="17">
+									</td>
+								</tr>
+						</table>
+					</td>
+					</tr>
+					<tr>
+						<td>
+							<img src="imagen.jpg" width="480" height="400">
+						</td>
+					</tr>
+			</table>
+			
+			<table style="float:left" border="1" width="500">
+				<tr>
+					<td colspan="2">
+						<h1>Vehículo B</h1>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b><u>Asegurado</b>(véase poliza de seguro)</u>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<a>Nombre</a><input type="text" name="nombreAseguradoB" required /><br>
+                        <a>Apellidos</a><input type="text" name="apellidosAseguradoB" required /><br>
+                        <a>Dirección</a><input type="text" name="direccionAseguradoB" required /><br>
+                        <a>Codigo Postal</a><input type="text" pattern="[0-9]{5}" name="codigoPostalAseguradoB" required />
+                        <a>País</a><input type="text" name="paisAseguradoB" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonoEmailAseguradoB" required /><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b><u>Vehículo</u></b>
+					</td>
+				</tr>
+				<tr>
+					<td>					
+						<b>Vehículo a motor</b>
+					</td>
+					<td>
+						<b>Remolque</b>
+					</td>
+				</tr>
+                <tr>
+                    <td>
+                        <p>Marca o modelo</p><input type="text" name="marcaB" required /><br>
+                        <p>Matrícula o bastido</p><input type="text" name="matriculaB" required /><br>
+                        <p>País de matrícula</p><input type="text" name="paisMatriculaB" required />
+                    </td>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p>Matricula o bastidor</p><input type="text" name="matriculaRemolqueB" required /><br>
+                        <p>País de matrícula</p><input type="text" name="paisMatriculaRemolqueB" required /><br>                      
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <b><u>Aseguradora</b>(véase poliza de seguro)</u>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a>Nombre</a><input type="text" name="nombreAseguradoraB" required /><br>
+                        <a>Nº de póliza</a><input type="text" name="numeroPolizaB" required /><br>
+                        <a>Nº de Carta Verde</a><input type="text" name="numeroCartaVerdeB" required /><br>
+                        <a>Certificado o Carta Verde desde</a><input type="date" name="certificadoDesdeB" />hasta<input type="date" name="certificadohastaB" /><br>
+                        <a>Agencia(oficina o corredor)</a><input type="text" name="oficinaB" required /><br>
+                        <a>Nombre</a><input type="text" name="nombreAseguradoraAgenciaB" required /><br>
+                        <a>Direccion</a><input type="text" name="direccionAseguradoraAgenciaB" required /><br>
+                        <a>País</a><input type="text" name="paisAseguradoraAgenciaB" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonooEmailAseguradoraB" required /><br>
+                        <em>¿Los daños propios del vehículo están asegurados?</em>
+                        <form>
+                            <input type="radio" name="dañosVehículoAseguradosB" value="no" checked/> No
+                            <input type="radio" name="dañosVehículoAseguradosB" value="si"/> Si 
+                        </form>
+                    </td>
+                </tr>
+				<tr>
+                    <td colspan="2">
+                        <b><u>Conductor</b>(ver permiso de conducir)</u>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a>NOMBRE</a><input type="text" name="nombreConductorB" required /><br>
+                        <a>Apellidos</a><input type="text" name="apellidosConductorB" required /><br>
+                        <a>Fecha de nacimiento</a> <input type="date" name="fechaNacimientoConductorB" /><br>
+                        <a>Direccion</a><input type="text" name="direccionConductorB" required /><br>
+                        <a>País</a><input type="text" name="paisConductorA" required /><br>
+                        <a>Teléfono o Email</a><input type="text" pattern="([0-9]{9}) || ([a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3})" name="telefonooemailConductorB" required /><br>
+                        <a>Permiso de conducir nº</a><input type="text" name="permisoConducirConductorB" required /><br>
+                        <a>Categoría(A,B,...)</a><input type="text" name="categoríaConductorB" required /><br>
+                        <a>Permiso válido hasta</a> <input type="date" name="permisoValidoConductorB" /><br>
+                    </td>
+                </tr>
+				<tr><td colspan="2"><b><-- Indicar el punto de choque inicial con una flecha</td></tr>
+				<tr>
+					<td colspan="2">
+						<b>Daños apreciados al vehículo B</b><br>
+						​<textarea id="testigos" name="dañosApreciadosB" rows="3" cols="40"></textarea><br>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<b>Observaciones</b><br>
+						<textarea id="testigos" name="observacionesB" rows="3" cols="40"></textarea><br>
+					</td>
+				</tr>
+			</table>
+			
+        </div>
+		<div style="clear:left">
+			<input type="submit" value="Enviar" style="clear:left;margin-top:10px;">
+		</div>
+	</form>
+    </body>
+</html>
